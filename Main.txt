@@ -1,0 +1,6 @@
+public class Main {
+
+  public static void main(String[] args) {
+
+    Pedagoga Pedagoga1 = new Pedagoga("Marcia", 100, "RH");
+    Pedagoga pedagoga2 = new Pedagoga("Roberta", 60, "Secretaria");

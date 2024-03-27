@@ -1,0 +1,72 @@
+import java.util.regex.Pattern;
+
+public class Pedagoga {
+
+  private String nome;
+  private int idade;
+  private String gerenciamento;
+
+  public Pedagoga() {
+  }
+
+  public Pedagoga(String nome, int idade, String gerenciamento) {
+    setNome(nome);
+    setIdade(idade);
+    setGerenciamento(gerenciamento);
+  }
+
+  public void setNome(String nome) {
+    validarNomeDaPedagoga(nome);
+  }
+
+  private void validarNomeDaPedagoga(String nome) {
+
+    Pattern REGEX_NOME = Pattern.compile(nome);
+
+    boolean valido = REGEX_NOME.matcher(nome).matches();
+
+    if (valido) {
+      this.nome = nome;
+      System.out.println("Nome é valido! " + nome);
+    } else {
+      System.out.println("Não é um nome valido, tente novamente");
+    }
+
+  }
+
+  public void setIdade(int idade) {
+    validarIdadeDaPedagoga(idade);
+  }
+
+  private void validarIdadeDaPedagoga(int idade) {
+
+    if (idade > 0 && idade <= 100) {
+      System.out.println("Idade valida " + idade);
+      this.idade = idade;
+    } else {
+
+      System.out.println("Idade invalida");
+    }
+
+  }
+
+  public void setGerenciamento(String gerenciamento) {
+    validarGerenciamentoDaPedagoga(gerenciamento);
+  }
+
+  private void validarGerenciamentoDaPedagoga(String gerenciamento) {
+
+    Pattern REGEX_NOME = Pattern.compile(gerenciamento);
+
+    boolean valido = REGEX_NOME.matcher(gerenciamento).matches();
+
+    if (valido) {
+      System.out.println("Gerenciamento é valido! " + gerenciamento);
+      this.gerenciamento = gerenciamento;
+    } else {
+      System.out.println("Não é um cargo valido, tente novamente");
+    }
+
+  }
+
+}
